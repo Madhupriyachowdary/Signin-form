@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="Form">
+    <label for="Name">Name:</label>
+    <input type="text" id="Name" name="Name" required>
+
+    <label for="Email">Email:</label>
+    <input type="text" id="Email" name="Email" required>
+
+    <label for="Mobilenum">Mobilenum:</label>
+    <input type="text" id="Mobilenum" name="Mobilenum" required>
+
+    <label for="Password">Password(min. 8 characters)</label>
+    <input type="text" id="Password" name="Password" required>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      
+      var Name = document.getElementById('Name').value;
+      var Email = document.getElementById('Email').value;
+      var Mobilenum = document.getElementById('Mobilenum').value;
+      var Password = document.getElementById('Password').value;
+
+      
+      if (Name === '' || Email === '' || Mobilenum === '' || Password <8) {
+        alert('Please fill in all fields and ensure the password is at least 8 characters long');
+        return;
+      }
+
+      
+      alert('Form submitted successfully:\nName: ' + Name + '\nEmail: ' + Email + '\nMobilenum: ' + Mobilenum );
+    }
+  </script>
+
+</body>
+</html>
+
